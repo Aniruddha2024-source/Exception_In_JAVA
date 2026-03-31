@@ -29,8 +29,6 @@ public class Main {
                 break;
             }catch(InvalidEmailException | WeakPasswordException | UserAlreadyExistsException e) {
                 System.out.println("Error: " + e.getMessage());
-                continue;
-
             }
 
         }
