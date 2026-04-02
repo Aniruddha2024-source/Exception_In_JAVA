@@ -1,0 +1,34 @@
+package lamda.Test;
+
+//import lamda.service.impl.ServiceImpl;
+
+import lamda.entity.Employee;
+import lamda.util.CustomComaparator;
+import lamda.util.GeneratorUtil;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+
+public class Test7 {
+    public static void main(String[] args) {
+        List<Employee> employeeList = GeneratorUtil.populateEmployees();
+
+        System.out.println("Sorted by Name: ");
+        // Method reference
+        Collections.sort(employeeList, CustomComaparator::CompareByMarks);
+        for(Employee employee: employeeList) {
+            System.out.println(employee);
+        }
+
+        System.out.println("Sorted by Name: ");
+        Collections.sort(employeeList, ( o1,  o2) -> {
+            return o1.getMarks() - o2.getMarks();});
+        for(Employee employee: employeeList) {
+            System.out.println(employee);
+        }
+
+
+    }
+}

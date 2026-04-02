@@ -15,5 +15,7 @@ public class Test5 {
         Predicate<Integer> service = num -> { return num >= 0;};
         boolean result = service.test(15);
         System.out.println(result);
+
+
     }
 }
